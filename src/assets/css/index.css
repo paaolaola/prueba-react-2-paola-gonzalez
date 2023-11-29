@@ -140,13 +140,13 @@
     margin: 10rem auto 3rem;
     height: 30px;
 }
+
 .home-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    place-items: center;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    margin: auto;
+    padding: 5rem;
 }
 .home-card-container {
     display: flex;
@@ -161,6 +161,8 @@
     position: relative;
     padding: 1rem;
     height: 80%;
+    width: 80%;
+    margin: auto;
 }
 
 .home-card-container::after {
@@ -334,7 +336,6 @@ a {
     color: rgb(41, 41, 41);
     font-family: "Archivo Black", sans-serif;
     font-size: 18px;
-    margin-top: 4rem;
 }
 .footer-data {
     display: flex;
@@ -349,18 +350,19 @@ a {
 }
 
 .form-container input {
-    padding: 18px;
+    padding: 15px;
     width: 100%;
     border-radius: 10px;
     border-style: none;
     background-color: #fce994;
+    margin-bottom: 1rem;
 }
 .form-container button {
     position: absolute;
     width: 20%;
     top: -7%;
     right: -20%;
-    height: 80%;
+    height: 60%;
 }
 
 .footer-2 {
@@ -369,22 +371,25 @@ a {
     justify-content: center;
     align-items: center;
     color: black;
-    height: 100px;
-    background-repeat: repeat-x;
-    background-image: url("cuadros.jpg");
-    background-size: 15%;
 }
-
+.footer-img {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    object-fit: calc(35%);
+}
 .footer-text-1 {
     font-size: 14px;
     background-color: #f4d43e;
     padding: 0.1rem;
     transform: rotate(4deg);
+    position: relative;
 }
 
 .footer-text-2 {
     font-size: 8px;
     background-color: #f4d43e;
+    position: relative;
 }
 
 .footer-icons {
@@ -412,13 +417,15 @@ a {
         grid-template-columns: repeat(1, 1fr);
         justify-content: center;
         gap: 2rem;
+        margin: auto;
     }
     .home-card-container {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 80%;
         height: auto;
         padding: 1rem;
+        margin: auto;
     }
 
     /*card*/

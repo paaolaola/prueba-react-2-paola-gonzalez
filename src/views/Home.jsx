@@ -27,7 +27,7 @@ const Home = () => {
             </main>
             <section>
                 <div className="header-container">
-                    <img className="header-pizza" src="./pexels-pizza.jpg" alt="pizzaheader"></img>
+                    <img className="header-pizza" src="../img/pexels-pizza.jpg" alt="pizzaheader"></img>
                     <p className="header-text"> Ingredientes frescos e Ideas originales </p>
                 </div>
 

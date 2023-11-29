@@ -36,7 +36,7 @@ const ShopCart = () => {
                                     -
                                 </button>
                                 <span>{count}</span>
-                                <button className="btn-shop-cart" onClick={() => increase(pizza)}>
+                                <button className="btn-shop-cart" onClick={() => increase(count)}>
                                     +
                                 </button>
                                 <button className="btn-shop-cart" onClick={() => deletePizza(pizza)}>
