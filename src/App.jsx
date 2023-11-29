@@ -1,4 +1,5 @@
 import "./assets/css/App.css";
+import "./assets/css/Index.css";
 import { BrowserRouter } from "react-router-dom";
 import PizzaProvider from "./context/PizzaContext";
 import TopBar from "./components/TopBar";
