@@ -1,25 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { PizzaContext } from "../context/PizzaContext";
 import { useNavigate } from "react-router-dom";
 import TotalPrice from "../components/TotalPrice";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 const ShopCart = () => {
-    const { cart } = useContext(PizzaContext);
+    const { cart, count, increase, decrease, deletePizza } = useContext(PizzaContext);
     const navigate = useNavigate();
-    const [count, setCount] = useState(0);
-
-    const increase = () => {
-        setCount(count + 1);
-    };
-
-    const decrease = () => {
-        setCount(count - 1);
-    };
-
-    const deletePizzza = () => {
-        setCount(0);
-    };
 
     const goBack = (e) => {
         e.preventDefault();
@@ -52,7 +39,7 @@ const ShopCart = () => {
                                 <button className="btn-shop-cart" onClick={() => increase(pizza)}>
                                     +
                                 </button>
-                                <button className="btn-shop-cart" onClick={() => deletePizzza(pizza)}>
+                                <button className="btn-shop-cart" onClick={() => deletePizza(pizza)}>
                                     <DeleteForeverIcon />
                                 </button>
                             </div>
