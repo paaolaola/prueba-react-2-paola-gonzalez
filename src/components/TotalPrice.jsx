@@ -10,7 +10,7 @@ const TotalPrice = () => {
     });
     return (
         <div>
-            <p>Total: {formattedTotal}</p>
+            <p>{formattedTotal}</p>
         </div>
     );
 };

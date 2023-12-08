@@ -83,7 +83,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-right: 3rem;
+    margin-right: 2rem;
 }
 .cart-icon {
     color: #f4d43e;
@@ -118,14 +118,13 @@
 
 .header-text {
     font-family: Ephesis, Helvetica, Arial, sans-serif;
-    font-size: 4.5rem;
+    font-size: 4rem;
     color: rgb(255, 246, 230);
     position: absolute;
     width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: auto;
 }
 
 /*home*/
@@ -143,14 +142,17 @@
 
 .home-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
     gap: 2rem;
-    margin: auto;
-    padding: 5rem;
+    max-width: 1500px;
+
+    margin: 100px auto;
+    padding: 50px auto;
 }
 .home-card-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: black;
@@ -160,9 +162,8 @@
     text-align: left;
     position: relative;
     padding: 1rem;
-    height: 80%;
     width: 80%;
-    margin: auto;
+    margin: 1rem;
 }
 
 .home-card-container::after {
@@ -181,6 +182,7 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    padding: 1rem;
 }
 .name-pizza {
     text-transform: capitalize;
@@ -194,13 +196,14 @@
 }
 
 .data-pizza {
-    margin-left: 2rem;
     color: #f4d43e;
+    text-align: center;
 }
 
-.btns-pizza {
+.btns-pizza-home {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 button {
     background-color: black;
@@ -226,19 +229,20 @@ a {
 .card-container {
     display: flex;
     align-items: center;
-    width: 50%;
-    height: 50%;
+    justify-content: center;
     background-color: #f4d43e;
-    margin: auto;
     border-radius: 20px;
     padding: 2rem;
+    margin: 5rem;
 }
 .info-container {
     display: flex;
     flex-direction: column;
     align-items: start;
     color: black;
-    margin-left: 2rem;
+
+    padding: 40px auto;
+    width: 100%;
 }
 
 .card-img {
@@ -246,10 +250,11 @@ a {
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
+    padding: 2rem;
 }
 .card-title {
     text-transform: capitalize;
-    text-align: center;
+    margin-left: 3rem;
 }
 .card-details {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -262,6 +267,11 @@ a {
     font-weight: 600;
     text-align: left;
 }
+
+.btns-pizza {
+    display: flex;
+    align-items: center;
+}
 .home-btn {
     background-color: #f4d43e;
     color: black;
@@ -271,23 +281,33 @@ a {
 .shop-container {
     margin: 4rem, 7rem;
 }
-
+.btn-shop-cart {
+    width: 50px;
+    height: 50px;
+    align-items: center;
+}
+.btn-shop-delete {
+    background: #f4d43e;
+    color: black;
+    border: 1.5px solid black;
+    width: 50px;
+    height: 50px;
+}
 .box-container {
     display: flex;
     flex-direction: column;
-
     background-color: #f4d43e;
     color: black;
-    margin: 5rem;
-    padding: 5rem;
     border-radius: 20px;
+    margin: 5rem;
+    padding: 2rem;
 }
 .box-title {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 .box-price {
     display: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
@@ -296,13 +316,17 @@ a {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-right: 2rem;
+    padding: 1rem;
 }
 .shop-details-1,
 .shop-details-2 {
     display: flex;
     align-items: center;
     font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+.btns-shop {
+    display: flex;
+    align-items: center;
 }
 
 .cart-list {
@@ -311,6 +335,10 @@ a {
     text-transform: capitalize;
     font-style: italic;
     font-size: 14px;
+}
+
+.text-price {
+    margin-left: 1rem;
 }
 .btn-message {
     background-color: rgb(12, 12, 12);
@@ -323,6 +351,13 @@ a {
 
 .cart-title {
     text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.total-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*footer*/
@@ -342,7 +377,7 @@ a {
 }
 .footer-title {
     color: white;
-    margin-right: 1rem;
+    margin: 1.5rem;
 }
 
 .form-container {
@@ -378,6 +413,7 @@ a {
     position: absolute;
     object-fit: calc(35%);
 }
+
 .footer-text-1 {
     font-size: 14px;
     background-color: #f4d43e;
@@ -397,7 +433,75 @@ a {
 }
 
 /*responsive*/
-@media screen and (max-width: 540px) {
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+    /*header*/
+    .header-text {
+        font-size: 50px;
+    }
+    .logo-text-img {
+        font-size: 1rem;
+    }
+    /*home*/
+    .home-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        width: 80%;
+    }
+    .home-card-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 90%;
+        width: 80%;
+        margin: auto;
+    }
+    .data-pizza {
+        margin: auto;
+    }
+
+    /*cart*/
+    .cart-container {
+        font-size: 1rem;
+    }
+    .cart-icon {
+        margin-right: 0;
+    }
+    /*shopcart*/
+
+    .box-title {
+        font-size: 1.5rem;
+    }
+
+    .box-price {
+        font-size: 15px;
+    }
+
+    /*card*/
+
+    .card-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    /*footer*/
+    .footer-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+    /*navbar*/
+    .logo-text-img {
+        font-size: 1rem;
+    }
+
     /*home*/
     .pizza-home {
         width: 60px;
@@ -406,18 +510,12 @@ a {
         font-size: 20px;
     }
     .header-text {
-        font-size: 2rem;
-        width: 50%;
+        font-size: 50px;
     }
-    h1 {
-        font-size: 20px;
-    }
+
     .home-gallery {
-        display: grid;
         grid-template-columns: repeat(1, 1fr);
-        justify-content: center;
-        gap: 2rem;
-        margin: auto;
+        width: 80%;
     }
     .home-card-container {
         display: flex;
@@ -438,9 +536,10 @@ a {
         height: auto;
         margin: 2rem;
     }
+
     .card-img {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         object-fit: cover;
     }
@@ -457,60 +556,44 @@ a {
         margin-right: 0;
     }
     .cart-container {
-        font-size: 8px;
+        font-size: 1rem;
     }
-    /*shopcart*/
-    .shop-container {
-        margin: auto;
-    }
-    .box-container {
-        width: 40%;
-        min-height: 50vh;
-        margin: auto;
-        align-items: center;
-    }
-    .box-title {
-        font-size: 14px;
-    }
-
     .cart-img {
-        width: 30px;
-        height: 30px;
-        margin: 5px;
-    }
-    .shop-details-1,
-    .shop-details-2 {
-        display: flex;
-        justify-content: center;
-        width: 30%;
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-    }
-
-    .box-price {
-        font-size: 10px;
-        align-items: center;
-        justify-content: center;
-        margin: 10px;
         padding: 0;
     }
-    .cart-list {
-        visibility: hidden;
-    }
 
-    .btn-shop-cart {
-        width: 30px;
-        height: 30px;
+    .text-price {
+        margin-left: 0;
+    }
+    .btns-shop {
+        display: flex;
         align-items: center;
-        padding: 10px;
+    }
+    .shop-details-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+    }
+    .shop-details-2 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .box-price {
+        flex-direction: column;
+        font-size: 13px;
+        justify-content: center;
+        align-items: center;
     }
 
     /*footer*/
+
     .footer-1 {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
     }
     .footer-2 {
         display: flex;
@@ -518,115 +601,11 @@ a {
         justify-content: center;
         align-items: center;
         color: black;
-        height: 120px;
         background-repeat: repeat-x;
         background-image: url("./cuadros.jpg");
-        background-size: 35%;
     }
 
     .form-container input {
         padding: 15px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    /*header*/
-    .header-text {
-        visibility: hidden;
-    }
-
-    /*home*/
-    .home-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        gap: 2rem;
-    }
-    .home-card-container {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        height: 90%;
-        width: 80%;
-        margin: auto;
-    }
-    .data-pizza {
-        margin: auto;
-    }
-    .btns-pizza {
-        justify-content: center;
-        margin: auto;
-    }
-
-    /*cart*/
-    .cart-container {
-        font-size: 10px;
-    }
-    .cart-icon {
-        margin-right: 0;
-    }
-    /*shopcart*/
-    .shop-container {
-        margin: auto;
-    }
-    .box-container {
-        width: 40%;
-        min-height: 50vh;
-        margin: auto;
-        align-items: center;
-    }
-    .box-title {
-        font-size: 14px;
-    }
-
-    .cart-img {
-        width: 30px;
-        height: 30px;
-        margin: 5px;
-    }
-    .shop-details-1,
-    .shop-details-2 {
-        display: flex;
-        justify-content: center;
-        width: 30%;
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-    }
-
-    .box-price {
-        font-size: 10px;
-        align-items: center;
-        justify-content: center;
-        margin: 10px;
-        padding: 0;
-    }
-    .cart-list {
-        visibility: hidden;
-    }
-
-    .btn-shop-cart {
-        width: 30px;
-        height: 30px;
-        align-items: center;
-        padding: 10px;
-    }
-    /*card*/
-    .card-container {
-        display: flex;
-        flex-direction: row;
-        width: 70%;
-    }
-    .card-img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    /*footer*/
-    .footer-1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
     }
 }

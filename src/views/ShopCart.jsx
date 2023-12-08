@@ -31,21 +31,26 @@ const ShopCart = () => {
                             </div>
 
                             <div className="shop-details-2">
-                                <p>${pizza.price}</p>
-                                <button className="btn-shop-cart" disabled={count <= 0} onClick={() => decrease(pizza)}>
-                                    -
-                                </button>
-                                <span>{count}</span>
-                                <button className="btn-shop-cart" onClick={() => increase(count)}>
-                                    +
-                                </button>
-                                <button className="btn-shop-cart" onClick={() => deletePizza(pizza)}>
-                                    <DeleteForeverIcon />
-                                </button>
+                                <div>
+                                    <h4 className="text-price">${pizza.price}</h4>
+                                </div>
+                                <div className="btns-shop">
+                                    <button className="btn-shop-cart" disabled={count <= 0} onClick={() => decrease(pizza)}>
+                                        -
+                                    </button>
+                                    <span>{count}</span>
+                                    <button className="btn-shop-cart" onClick={() => increase(count)}>
+                                        +
+                                    </button>
+                                    <button className="btn-shop-delete" onClick={() => deletePizza(pizza)}>
+                                        <DeleteForeverIcon />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}
                     <div className="total-price">
+                        <h3>Total:</h3>
                         <h3>
                             <TotalPrice />
                         </h3>

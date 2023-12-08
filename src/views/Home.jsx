@@ -43,7 +43,7 @@ const Home = () => {
                                 </p>
 
                                 <p>${pizza.price}</p>
-                                <div className="btns-pizza">
+                                <div className="btns-pizza-home">
                                     <button onClick={() => handleClick(pizza.name)}>Ver Detalle</button>
 
                                     <button onClick={() => addToCart(pizza)}>
