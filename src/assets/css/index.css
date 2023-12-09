@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0rem 2rem;
     width: auto;
     background-color: rgb(0, 0, 0);
 }
@@ -66,7 +66,7 @@
 .logo-text-img {
     display: flex;
     color: #ffffff;
-    margin: 0rem 2rem;
+
     font-family: "Archivo Black", sans-serif;
     font-size: 1.2rem;
     cursor: pointer;
@@ -75,14 +75,13 @@
 
 .pizza-home {
     width: 60px;
-    margin-right: 1.5rem;
+    margin-right: 20px;
 }
 
 .cart-container {
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-right: 2rem;
 }
 .cart-icon {
     color: #f4d43e;
@@ -104,27 +103,33 @@
     text-decoration: none;
 }
 
+/*header*/
 .header-container {
+    position: relative;
     background-color: black;
     width: 100%;
     height: 400px;
 }
-.header-pizza {
-    width: 100%;
-    height: 30rem;
-    object-fit: cover;
-    opacity: 0.6;
-}
 
 .header-text {
-    font-family: Ephesis, Helvetica, Arial, sans-serif;
-    font-size: 4rem;
-    color: rgb(255, 246, 230);
+    display: block;
     position: absolute;
-    width: 100%;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+    font-family: Ephesis, "Courier New", Courier, monospace;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.header-pizza {
+    opacity: 0.6;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
 }
 
 /*home*/
@@ -136,7 +141,7 @@
     width: 13rem;
     padding: 2rem;
     transform: rotate(-4deg);
-    margin: 10rem auto 3rem;
+    margin: 3rem auto 3rem;
     height: 30px;
 }
 
@@ -298,7 +303,7 @@ a {
     background-color: #f4d43e;
     color: black;
     border-radius: 20px;
-    margin: 5rem;
+    margin: 2rem;
     padding: 2rem;
 }
 .box-title {
@@ -435,9 +440,7 @@ a {
 
 @media screen and (min-width: 768px) and (max-width: 1020px) {
     /*header*/
-    .header-text {
-        font-size: 50px;
-    }
+
     .logo-text-img {
         font-size: 1rem;
     }
@@ -498,18 +501,23 @@ a {
 @media screen and (min-width: 280px) and (max-width: 768px) {
     /*navbar*/
     .logo-text-img {
-        font-size: 1rem;
+        font-size: 0.6rem;
+    }
+    .pizza-nav {
+        padding: 0rem 1rem;
     }
 
     /*home*/
     .pizza-home {
-        width: 60px;
+        width: 40px;
+        margin-right: 10px;
     }
+
     .header-pizza {
         font-size: 20px;
     }
     .header-text {
-        font-size: 50px;
+        font-size: 2rem;
     }
 
     .home-gallery {
@@ -555,7 +563,7 @@ a {
         margin-right: 0;
     }
     .cart-container {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
     .cart-img {
         padding: 0;

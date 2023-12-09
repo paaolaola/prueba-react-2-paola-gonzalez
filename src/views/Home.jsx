@@ -28,7 +28,7 @@ const Home = () => {
             <section>
                 <div className="header-container">
                     <img className="header-pizza" src="../img/pexels-pizza.jpg" alt="pizzaheader"></img>
-                    <p className="header-text"> Ingredientes frescos e Ideas originales </p>
+                    <p className="header-text"> Ingredientes frescos, Ideas originales </p>
                 </div>
 
                 <h1 className="home-title">PIZZAS</h1>

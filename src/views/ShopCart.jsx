@@ -24,7 +24,7 @@ const ShopCart = () => {
                         <div key={index} className="box-price">
                             <div className="shop-details-1">
                                 <img className="cart-img" src={pizza.img} alt={pizza.name}></img>
-                                <h4 className="cart-title">{pizza.name}</h4>
+                                <h3 className="cart-title">{pizza.name}</h3>
                                 <p className="cart-list">
                                     ({pizza.ingredients[0]}, {pizza.ingredients[1]}, {pizza.ingredients[2]} & {pizza.ingredients[3]})
                                 </p>
@@ -32,7 +32,7 @@ const ShopCart = () => {
 
                             <div className="shop-details-2">
                                 <div>
-                                    <h4 className="text-price">${pizza.price}</h4>
+                                    <h3 className="text-price">${pizza.price}</h3>
                                 </div>
                                 <div className="btns-shop">
                                     <button className="btn-shop-cart" disabled={count <= 0} onClick={() => decrease(pizza)}>
