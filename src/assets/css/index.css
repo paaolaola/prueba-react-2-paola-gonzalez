@@ -508,6 +508,17 @@ a {
     }
 
     /*home*/
+    .home-title {
+        letter-spacing: 4px;
+        font-size: 20px;
+        background-color: #f4d43e;
+        color: black;
+        width: 7rem;
+        padding: 1rem;
+        transform: rotate(-4deg);
+        margin: auto;
+        height: 15px;
+    }
     .pizza-home {
         width: 40px;
         margin-right: 10px;
@@ -523,6 +534,7 @@ a {
     .home-gallery {
         grid-template-columns: repeat(1, 1fr);
         width: 80%;
+        margin-top: 3rem;
     }
     .home-card-container {
         display: flex;
