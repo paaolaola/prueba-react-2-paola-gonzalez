@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import PizzaProvider from "./context/PizzaContext";
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
-import Router from "./router/Router";
+import Router from "./Router/Router";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
