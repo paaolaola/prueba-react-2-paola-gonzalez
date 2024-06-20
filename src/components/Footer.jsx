@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-2">
-                <img className="footer-img" src="./img/cuadros.jpg" alt="footer"></img>
+                <img className="footer-img" src="./img/cuadritos.png" alt="footer"></img>
                 <p className="footer-text-1">
                     SÍGUENOS | <InstagramIcon style={{ fontSize: "18px", cursor: "pointer" }} /> |{" "}
                     <FacebookIcon style={{ fontSize: "18px", cursor: "pointer" }} /> | #MammaMiaPizza

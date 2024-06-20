@@ -5,7 +5,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Loader from "../components/Loader";
 
 const Home = () => {
-    const { pizzas, loading, error, cart, setCart } = useContext(PizzaContext);
+    const { pizzas, loading, error, addToCart } = useContext(PizzaContext);
     const navigate = useNavigate();
 
     const handleClick = (name) => {
@@ -13,16 +13,10 @@ const Home = () => {
         navigate(path);
     };
 
-    const addToCart = (pizza) => {
-        console.log(pizza);
-        setCart([...cart, pizza]);
-    };
-
     return (
         <>
             <main className={`container ${!loading ? "loaded" : ""}`}>
                 <Loader />
-
                 {error && !loading && <h3 className="error">Ha ocurrido un error. Intente de nuevo más tarde</h3>}
             </main>
             <section>
@@ -30,7 +24,6 @@ const Home = () => {
                     <img className="header-pizza" src="../img/pexels-pizza.jpg" alt="pizzaheader"></img>
                     <p className="header-text"> Ingredientes frescos, Ideas originales </p>
                 </div>
-
                 <h1 className="home-title">PIZZAS</h1>
                 <div className="home-gallery">
                     {pizzas.map((pizza) => (
@@ -41,12 +34,13 @@ const Home = () => {
                                 <p className="list-pizza">
                                     {pizza.ingredients[0]}, {pizza.ingredients[1]}, {pizza.ingredients[2]} & {pizza.ingredients[3]}
                                 </p>
-
                                 <p>${pizza.price}</p>
                                 <div className="btns-pizza-home">
-                                    <button onClick={() => handleClick(pizza.name)}>Ver Detalle</button>
-
-                                    <button onClick={() => addToCart(pizza)}>
+                                    <button className="btn-detail" onClick={() => handleClick(pizza.name)}>
+                                        Ver Detalle
+                                    </button>
+                                    <button className="btn-detail" onClick={() => addToCart(pizza)}>
+                                        Agregar
                                         <AddShoppingCartIcon className="addcart-icon" />
                                     </button>
                                 </div>

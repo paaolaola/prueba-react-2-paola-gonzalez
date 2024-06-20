@@ -3,14 +3,13 @@ import { PizzaContext } from "../context/PizzaContext";
 
 const TotalPrice = () => {
     const { cart } = useContext(PizzaContext);
-    const total = cart.reduce((acc, product) => acc + product.price, 0);
-    const formattedTotal = total.toLocaleString("es-CL", {
-        style: "currency",
-        currency: "CLP",
-    });
+    const totalPrice = cart.reduce((total, pizza) => {
+        return total + pizza.price * pizza.quantity;
+    }, 0);
+
     return (
         <div>
-            <p>{formattedTotal}</p>
+            <p>$ {totalPrice.toLocaleString("es-ES")}</p>
         </div>
     );
 };

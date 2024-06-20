@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { PizzaContext } from "../context/PizzaContext";
 import { NavLink, Link } from "react-router-dom";
 import TotalPrice from "./TotalPrice";
 
@@ -7,7 +5,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Navbar() {
     const ActiveClass = ({ isActive }) => (isActive ? "pizza-active" : "pizza-inactive");
-    const { cart } = useContext(PizzaContext);
 
     return (
         <header>

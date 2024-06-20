@@ -4,17 +4,14 @@ import { PizzaContext } from "../context/PizzaContext";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Card = () => {
-    const { pizzas, cart, setCart } = useContext(PizzaContext);
+    const { pizzas, addToCart } = useContext(PizzaContext);
     const { name } = useParams();
 
     const selectedPizza = pizzas.find((pizza) => pizza.name === name);
     if (!selectedPizza) {
         return <p>No se encontró el producto</p>;
     }
-    const addToCart = (selectedPizza) => {
-        console.log(selectedPizza);
-        setCart([...cart, selectedPizza]);
-    };
+
     return (
         <>
             <div key={selectedPizza.id} className="card-container">
@@ -30,10 +27,14 @@ const Card = () => {
                         <h3>${selectedPizza.price}</h3>
                     </div>
                     <div className="btns-pizza">
-                        <button onClick={() => addToCart(selectedPizza)}>
-                            {" "}
+                        <button className="btn-detail" onClick={() => addToCart(selectedPizza)}>
+                            Agregar
                             <AddShoppingCartIcon className="addcart-icon" />
                         </button>
+                        <Link to="/carro">
+                            {" "}
+                            <button className="home-btn">Terminar compra</button>
+                        </Link>
                         <Link to="/">
                             {" "}
                             <button className="home-btn">Seguir viendo</button>

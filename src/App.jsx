@@ -6,6 +6,8 @@ import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Router from "./router/Router";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     return (
@@ -14,6 +16,7 @@ function App() {
                 <TopBar />
                 <Navbar />
                 <Router />
+                <ToastContainer />
                 <Footer />
             </BrowserRouter>
         </PizzaProvider>

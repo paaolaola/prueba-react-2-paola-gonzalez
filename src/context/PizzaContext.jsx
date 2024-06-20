@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from "react";
+import { Zoom, toast } from "react-toastify";
+
 export const PizzaContext = createContext();
 
 const PizzaProvider = ({ children }) => {
@@ -6,18 +8,72 @@ const PizzaProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [count, setCount] = useState(false);
 
-    const increase = () => {
-        setCount(count + 1);
+    const increase = (pizzaId) => {
+        setCart((prevCart) => {
+            return prevCart.map((pizza) => (pizza.id === pizzaId ? { ...pizza, quantity: pizza.quantity + 1 } : pizza));
+        });
     };
 
-    const decrease = () => {
-        setCount(count - 1);
+    const decrease = (pizzaId) => {
+        setCart((prevCart) => {
+            const updatedCart = prevCart
+                .map((pizza) => (pizza.id === pizzaId ? { ...pizza, quantity: pizza.quantity - 1 } : pizza))
+                .filter((pizza) => pizza.quantity > 0);
+
+            // Check if the pizza was removed and show toast notification
+            const removedPizza = prevCart.find((pizza) => pizza.id === pizzaId && pizza.quantity === 1);
+            if (removedPizza) {
+                const toastStyle = {
+                    background: "#f4d43e",
+                    color: "#000000",
+                };
+                toast.error("Producto eliminado!", {
+                    transition: Zoom,
+                    position: "bottom-center",
+                    style: toastStyle,
+                    autoClose: 1000,
+                });
+            }
+
+            return updatedCart;
+        });
     };
 
-    const deletePizza = () => {
-        setCount(0);
+    const deletePizza = (pizzaId) => {
+        setCart((prevCart) => prevCart.filter((pizza) => pizza.id !== pizzaId));
+        const toastStyle = {
+            background: "#f4d43e",
+            color: "#000000",
+        };
+        toast.error("Producto eliminado del carro!", {
+            transition: Zoom,
+            position: "bottom-center",
+            style: toastStyle,
+            autoClose: 1000,
+        });
+    };
+
+    const addToCart = (pizza) => {
+        setCart((prevCart) => {
+            const existingPizza = prevCart.find((item) => item.id === pizza.id);
+            if (existingPizza) {
+                return prevCart.map((item) => (item.id === pizza.id ? { ...item, quantity: item.quantity + 1 } : item));
+            } else {
+                return [...prevCart, { ...pizza, quantity: 1 }];
+            }
+        });
+
+        const toastStyle = {
+            background: "#f4d43e",
+            color: "#000000",
+        };
+        toast.success("Se agregó al carro!", {
+            transition: Zoom,
+            position: "bottom-center",
+            style: toastStyle,
+            autoClose: 1000,
+        });
     };
 
     useEffect(() => {
@@ -27,21 +83,20 @@ const PizzaProvider = ({ children }) => {
         }
         getPizzas();
     }, []);
-    const getPizzas = async () => {
-        const response = await fetch("/data/pizzas.json");
-        const data = await response.json();
-        setPizzas(data);
-        console.log(data);
-    };
-    setTimeout(() => {
-        setLoading(false);
-    }, 2000);
 
-    return (
-        <PizzaContext.Provider value={{ pizzas, cart, setCart, loading, setLoading, error, setError, increase, decrease, deletePizza, count, setCount }}>
-            {children}
-        </PizzaContext.Provider>
-    );
+    const getPizzas = async () => {
+        try {
+            const response = await fetch("/data/pizzas.json");
+            const data = await response.json();
+            setPizzas(data);
+        } catch (error) {
+            setError(true);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return <PizzaContext.Provider value={{ pizzas, cart, loading, error, increase, decrease, deletePizza, addToCart }}>{children}</PizzaContext.Provider>;
 };
 
 export default PizzaProvider;
