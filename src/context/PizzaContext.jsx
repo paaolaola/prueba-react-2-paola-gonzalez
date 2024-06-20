@@ -46,7 +46,7 @@ const PizzaProvider = ({ children }) => {
             background: "#f4d43e",
             color: "#000000",
         };
-        toast.error("Producto eliminado del carro!", {
+        toast.error("Producto eliminado!", {
             transition: Zoom,
             position: "bottom-center",
             style: toastStyle,
