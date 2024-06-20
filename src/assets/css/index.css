@@ -450,6 +450,7 @@ a {
     width: 100%;
     position: absolute;
     object-fit: calc(35%);
+    height: 80px;
 }
 
 .footer-text-1 {
@@ -610,6 +611,9 @@ a {
         align-items: center;
         margin: auto;
     }
+    .btn-detail {
+        width: 90px;
+    }
 
     /*cart*/
 
@@ -650,9 +654,11 @@ a {
         align-items: center;
         padding: 2rem;
     }
+    .box-container {
+        width: 80%;
+    }
 
     /*footer*/
-
     .footer-1 {
         display: flex;
         flex-direction: column;
@@ -671,8 +677,5 @@ a {
 
     .form-container input {
         padding: 15px;
-    }
-    .footer-img {
-        min-height: 100px;
     }
 }
