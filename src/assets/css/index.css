@@ -151,7 +151,9 @@
 .home-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 100%;
+    gap: 10px;
+    margin: 6rem auto;
+    padding: 3rem;
 }
 .home-card-container {
     display: flex;
@@ -162,9 +164,10 @@
     color: #f4d43e;
     border: 1.5px solid #f4d43e;
     border-radius: 15px;
-    text-align: left;
     position: relative;
-    margin: 1rem;
+    padding: 1rem;
+
+    margin: 1rem auto;
 }
 
 .home-card-container::after {
@@ -307,7 +310,7 @@ a {
     justify-content: center;
     align-items: center;
     margin: 4rem auto;
-    min-height: 50vh;
+    min-height: 60vh;
 }
 .btn-shop-cart {
     width: 30px;
@@ -473,7 +476,7 @@ a {
 
 /*responsive*/
 
-@media screen and (min-width: 768px) and (max-width: 1020px) {
+@media screen and (min-width: 768px) and (max-width: 1180px) {
     /*header*/
 
     .logo-text-img {
@@ -481,17 +484,17 @@ a {
     }
     /*home*/
     .home-gallery {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        width: 100%;
+
+        margin: 5rem 0;
     }
     .home-card-container {
         display: flex;
         flex-direction: column;
         text-align: center;
-        height: 90%;
-        width: 100%;
+        width: 80%;
+        padding: 1rem 0;
+        margin: 2rem auto;
     }
     .data-pizza {
         margin: auto;
@@ -570,9 +573,11 @@ a {
     .home-gallery {
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
-        margin-top: 3rem;
-        margin: 1rem auto;
+        border-radius: 15px;
+        padding: 1rem 0;
+        margin: 2rem auto;
     }
+
     .home-card-container {
         display: flex;
         flex-direction: column;
