@@ -21,14 +21,13 @@ const PizzaProvider = ({ children }) => {
                 .map((pizza) => (pizza.id === pizzaId ? { ...pizza, quantity: pizza.quantity - 1 } : pizza))
                 .filter((pizza) => pizza.quantity > 0);
 
-            // Check if the pizza was removed and show toast notification
             const removedPizza = prevCart.find((pizza) => pizza.id === pizzaId && pizza.quantity === 1);
             if (removedPizza) {
                 const toastStyle = {
                     background: "#f4d43e",
                     color: "#000000",
                 };
-                toast.error("Producto eliminado!", {
+                toast.error(`Se ha eliminado "${removedPizza.name}"!`, {
                     transition: Zoom,
                     position: "bottom-center",
                     style: toastStyle,
@@ -42,11 +41,12 @@ const PizzaProvider = ({ children }) => {
 
     const deletePizza = (pizzaId) => {
         setCart((prevCart) => prevCart.filter((pizza) => pizza.id !== pizzaId));
+        const { name } = pizzas.find((pizza) => pizza.id === pizzaId);
         const toastStyle = {
             background: "#f4d43e",
             color: "#000000",
         };
-        toast.error("Producto eliminado!", {
+        toast.error(`Se ha eliminado "${name}"!`, {
             transition: Zoom,
             position: "bottom-center",
             style: toastStyle,
@@ -68,7 +68,7 @@ const PizzaProvider = ({ children }) => {
             background: "#f4d43e",
             color: "#000000",
         };
-        toast.success("Se agregó al carro!", {
+        toast.success(`Se agregó "${pizza.name}" al carro!`, {
             transition: Zoom,
             position: "bottom-center",
             style: toastStyle,
